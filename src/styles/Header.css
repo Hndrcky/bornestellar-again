@@ -1,0 +1,215 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: var(--transition);
+  background: transparent;
+}
+
+.header.scrolled {
+  background: var(--primary-black);
+  padding: 15px 0;
+  box-shadow: var(--shadow-lg);
+  border-bottom: 2px solid var(--primary-orange);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-text {
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.logo-highlight {
+  color: var(--primary-orange);
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+.logo-underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--primary-orange);
+  transition: width 0.3s ease;
+}
+
+.logo-container:hover .logo-underline {
+  width: 100%;
+}
+
+
+/* Update logo styles for image */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 80px; /* Adjust based on your logo size */
+  max-width: 250px;
+  width: auto;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive logo */
+@media (max-width: 768px) {
+  .logo-image {
+    height: 40px;
+    max-width: 150px;
+  }
+}
+
+/* If you want to keep text alongside logo */
+.logo-text {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+
+.logo-highlight {
+  color: var(--primary-orange);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-left: 5px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  padding: 5px 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-link-underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-orange);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-orange);
+}
+
+.nav-link:hover .nav-link-underline,
+.nav-link.active .nav-link-underline {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--primary-orange);
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: var(--white);
+  transition: var(--transition);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -6px);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background: var(--primary-black);
+    padding: 100px 40px;
+    transition: right 0.3s ease;
+    box-shadow: var(--shadow-lg);
+    border-left: 2px solid var(--primary-orange);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .nav-link {
+    font-size: 20px;
+  }
+}

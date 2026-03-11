@@ -1,0 +1,505 @@
+/* Sustainability Hero */
+.sustainability-hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #1a4d2e, #0a2f1a);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sustainability-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 30%, rgba(249,115,22,0.15) 0%, transparent 60%);
+}
+
+.sustainability-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  max-width: 800px;
+}
+
+.sustainability-hero .hero-title {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.sustainability-hero .hero-title span {
+  color: var(--primary-orange);
+  position: relative;
+  display: inline-block;
+}
+
+.sustainability-hero .hero-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-scroll .scroll-text {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.hero-scroll .scroll-line {
+  display: block;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--primary-orange), transparent);
+  margin: 0 auto;
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* Mission Section */
+.sustainability-mission {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.mission-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission-content h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.mission-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-orange);
+  border-radius: 2px;
+}
+
+.mission-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 30px;
+}
+
+.founder-quote {
+  margin-top: 60px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(249,115,22,0.05), transparent);
+  border-radius: 20px;
+  position: relative;
+}
+
+.founder-quote::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 120px;
+  color: var(--primary-orange);
+  opacity: 0.1;
+  font-family: serif;
+}
+
+.founder-quote blockquote {
+  font-size: 24px;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.founder-quote cite {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-orange);
+  font-style: normal;
+  position: relative;
+  z-index: 2;
+}
+
+/* Pillars Section */
+.pillars-section {
+  padding: 120px 0;
+  background: var(--light-gray);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.pillar-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pillar-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.pillar-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--primary-black);
+}
+
+.pillar-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 20px;
+}
+
+.pillar-initiatives h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-orange);
+  margin-bottom: 10px;
+}
+
+.pillar-initiatives ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pillar-initiatives li {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pillar-initiatives li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-orange);
+  font-weight: 600;
+}
+
+/* Initiatives Section */
+.initiatives-section {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.initiatives-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 60px;
+}
+
+.initiative-card {
+  background: linear-gradient(135deg, var(--white), var(--light-gray));
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+  border: 1px solid rgba(249,115,22,0.1);
+}
+
+.initiative-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-orange);
+}
+
+.initiative-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.initiative-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--primary-black);
+  line-height: 1.4;
+}
+
+.initiative-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-gray);
+  margin-bottom: 15px;
+}
+
+.initiative-impact {
+  font-size: 13px;
+  padding: 10px;
+  background: rgba(249,115,22,0.05);
+  border-radius: 10px;
+  color: var(--text-dark);
+}
+
+.initiative-impact strong {
+  color: var(--primary-orange);
+}
+
+/* Community Section */
+.community-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--primary-black), var(--dark-gray));
+  color: var(--white);
+}
+
+.community-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.community-content h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.community-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-orange);
+  border-radius: 2px;
+}
+
+.community-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  opacity: 0.9;
+}
+
+.community-programs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.program {
+  padding: 40px 30px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(249,115,22,0.2);
+}
+
+.program:hover {
+  transform: translateY(-10px);
+  background: rgba(249,115,22,0.1);
+  border-color: var(--primary-orange);
+}
+
+.program-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.program h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.program p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.roadmap-card {
+  background: linear-gradient(135deg, var(--white), var(--light-gray));
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.roadmap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.roadmap-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-black);
+}
+
+.roadmap-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: rgba(249,115,22,0.1);
+  transition: var(--transition);
+}
+
+.roadmap-card:hover .roadmap-number {
+  color: rgba(249,115,22,0.2);
+  transform: scale(1.2);
+}
+
+.roadmap-aspirations {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.roadmap-aspirations li {
+  font-size: 16px;
+  color: var(--text-gray);
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.roadmap-aspirations li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary-orange);
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .initiatives-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .sustainability-hero .hero-title {
+    font-size: 56px;
+  }
+
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .initiatives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .community-programs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .roadmap-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sustainability-hero .hero-title {
+    font-size: 42px;
+  }
+
+  .sustainability-hero .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .mission-content h2 {
+    font-size: 32px;
+  }
+
+  .mission-content p {
+    font-size: 16px;
+  }
+
+  .founder-quote blockquote {
+    font-size: 20px;
+  }
+
+  .pillars-grid,
+  .initiatives-grid,
+  .community-programs,
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program {
+    padding: 30px 20px;
+  }
+}
